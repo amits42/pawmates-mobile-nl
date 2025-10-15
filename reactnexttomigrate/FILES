@@ -1,0 +1,57 @@
+// app/layout.tsx
+export const dynamic = "force-dynamic"
+// rest of the code for app/layout.tsx
+
+// app/api/bookings/all/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/all/route.ts
+
+// app/api/bookings/ongoing/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/ongoing/route.ts
+
+// app/api/bookings/upcoming/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/upcoming/route.ts
+
+// app/api/sitters/bookings/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/sitters/bookings/route.ts
+
+// app/api/sitters/dashboard-stats/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/sitters/dashboard-stats/route.ts
+
+// app/api/sitters/profile/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/sitters/profile/route.ts
+
+// app/api/sitters/recent-bookings/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/sitters/recent-bookings/route.ts
+
+// app/api/sitters/wallet/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/sitters/wallet/route.ts
+
+// app/api/user/profile/route.ts
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/user/profile/route.ts
+
+// app/api/bookings/complete/route.ts (if it reads request.url)
+// Assuming this file reads request.url
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/complete/route.ts
+
+// app/api/bookings/start-service/route.ts (if it reads request.url)
+// Assuming this file reads request.url
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/start-service/route.ts
+
+// app/api/bookings/end-service/route.ts (if it reads request.url)
+// Assuming this file reads request.url
+export const dynamic = "force-dynamic"
+// rest of the code for app/api/bookings/end-service/route.ts
+
+// any other app/api/**/route.ts that accesses request.url or request.nextUrl.
+// (Placeholder for any other files that meet the criteria)
