@@ -17,6 +17,7 @@ import {
   removeStoredIsNewUser,
   removeStoredUser,
 } from "@/lib/auth-storage"
+import { API_CONFIG } from "@/lib/api-config"
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
@@ -49,7 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         try {
-          const res = await fetch("YOUR_API_URL/verify-token", {
+          const res = await fetch(API_CONFIG.ENDPOINTS.VERIFY_TOKEN, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -102,7 +103,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     console.log(`[v0] AuthProvider: Starting login for ${phone} as ${userType}`)
     setLoading(true)
     try {
-      const response = await fetch("YOUR_API_URL/auth/send-otp", {
+      const response = await fetch(API_CONFIG.ENDPOINTS.SEND_OTP, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -132,7 +133,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     console.log(`[v0] AuthProvider: Verifying OTP for ${phone} as ${userType}`)
     setLoading(true)
     try {
-      const endpoint = userType === "sitter" ? "YOUR_API_URL/sitters/verify-otp" : "YOUR_API_URL/auth/verify-otp"
+      const endpoint = userType === "sitter" ? API_CONFIG.ENDPOINTS.SITTER_VERIFY_OTP : API_CONFIG.ENDPOINTS.VERIFY_OTP
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -222,7 +223,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      const response = await fetch("YOUR_API_URL/user/profile", {
+      const response = await fetch(API_CONFIG.ENDPOINTS.USER_PROFILE, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -257,7 +258,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      const response = await fetch(`YOUR_API_URL/sitters/profile?userId=${sitter.userId}`, {
+      const response = await fetch(`${API_CONFIG.ENDPOINTS.SITTER_PROFILE}?userId=${sitter.userId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
